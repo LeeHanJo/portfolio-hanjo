@@ -5,7 +5,7 @@ import jakarta.persistence.*
 @Entity
 class Introduction(
         content: String,
-        isActive: String
+        isActive: Boolean
 ) : BaseEntity() {
 
     @Id
@@ -15,6 +15,6 @@ class Introduction(
 
     var content: String = content
 
-    var isActive: String = isActive
+    var isActive: Boolean = isActive
 
 }
