@@ -15,21 +15,21 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 @DataJpaTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ProjectRepositoryTest(
-        @Autowired val projectRepository: ProjectRepository,
-        @Autowired val skillRepository: SkillRepository
+    @Autowired val projectRepository: ProjectRepository,
+    @Autowired val skillRepository: SkillRepository
 ) {
 
     val DATA_SIZE = 10
 
     private fun createProject(n: Int): Project {
         val project = Project(
-                name = "${n}",
-                description = "테스트 설명 {n}",
-                startYear = 2023,
-                startMonth = 9,
-                endYear = 2023,
-                endMonth = 9,
-                isActive = true
+            name = "${n}",
+            description = "테스트 설명 {n}",
+            startYear = 2023,
+            startMonth = 9,
+            endYear = 2023,
+            endMonth = 9,
+            isActive = true
         )
 
         val details = mutableListOf<ProjectDetail>()
@@ -104,5 +104,11 @@ class ProjectRepositoryTest(
             println("project.skills.size: ${project.skills.size}")
         }
         println("----- testFindAllByIsActive 테스트 종료 -----")
+    }
+
+    @Test
+    fun testFindById() {
+        val findById = projectRepository.findById(1)
+        println(findById.isPresent)
     }
 }

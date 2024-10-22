@@ -12,19 +12,19 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 @DataJpaTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ExperienceRepositoryTest(
-        @Autowired val experienceRepository: ExperienceRepository
+    @Autowired val experienceRepository: ExperienceRepository
 ) {
     val DATA_SIZE = 10
 
     private fun createExperience(n: Int): Experience {
         val experience = Experience(
-                title = "${n}",
-                description = "테스트 설명 ${n}",
-                startYear = 2023,
-                startMonth = 9,
-                endYear = 2023,
-                endMonth = 9,
-                isActive = true
+            title = "${n}",
+            description = "테스트 설명 ${n}",
+            startYear = 2023,
+            startMonth = 9,
+            endYear = 2023,
+            endMonth = 9,
+            isActive = true
         )
 
         val details = mutableListOf<ExperienceDetail>()
@@ -80,5 +80,11 @@ class ExperienceRepositoryTest(
             println("experience.details.size: ${experience.details.size}")
         }
         println("----- testFindAllByIsActive 테스트 종료 -----")
+    }
+
+    @Test
+    fun testFindById() {
+        val findById = experienceRepository.findById(1)
+        println(findById.isPresent)
     }
 }
