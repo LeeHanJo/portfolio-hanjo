@@ -11,12 +11,12 @@ import java.time.LocalDate
 @Component
 @Profile(value = ["default"])
 class DataInitializer(
-        private var achievementRepository: AchievementRepository,
-        private var introductionRepository: IntroductionRepository,
-        private var linkRepository: LinkRepository,
-        private var skillRepository: SkillRepository,
-        private var projectRepository: ProjectRepository,
-        private var experienceRepository: ExperienceRepository
+        private val achievementRepository: AchievementRepository,
+        private val introductionRepository: IntroductionRepository,
+        private val linkRepository: LinkRepository,
+        private val skillRepository: SkillRepository,
+        private val projectRepository: ProjectRepository,
+        private val experienceRepository: ExperienceRepository
 ) {
 
     @PostConstruct
