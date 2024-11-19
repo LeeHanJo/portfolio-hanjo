@@ -35,7 +35,7 @@ class AdminAchievementViewController(
             Pair("menuName", "Resume"),
             Pair("pageName", table.name),
             Pair("editable", true),
-            Pair("deletabe", false),
+            Pair("deletable", false),
             Pair("hasDetails", false),
             )
         model.addAllAttributes(pageAttributes)
