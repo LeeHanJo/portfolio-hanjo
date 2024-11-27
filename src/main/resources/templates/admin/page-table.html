@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layouts/layout-admin :: layout(~{::main})}">
-
-<!-- ======= Head ======= -->
-<div th:replace="~{admin/fragments/fragment-head :: head}"></div>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layouts/layout-admin :: layout(~{::main})}">
 <body>
   <main id="main" class="main">
 
@@ -11,7 +8,6 @@
     <div th:replace="~{admin/fragments/fragment-form :: form(${formElements})}"></div>
 
     <div th:replace="~{admin/fragments/fragment-datatable :: datatable(${table})}"></div>
-
     <th:block th:if="${hasDetails}">
       <div th:replace="~{admin/fragments/fragment-datatable :: datatable(${detailTable})}"></div>
     </th:block>

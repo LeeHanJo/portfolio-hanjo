@@ -11,12 +11,14 @@ import java.time.LocalDate
 @Component
 @Profile(value = ["default"])
 class DataInitializer(
-        private val achievementRepository: AchievementRepository,
-        private val introductionRepository: IntroductionRepository,
-        private val linkRepository: LinkRepository,
-        private val skillRepository: SkillRepository,
-        private val projectRepository: ProjectRepository,
-        private val experienceRepository: ExperienceRepository
+    private val achievementRepository: AchievementRepository,
+    private val experienceRepository: ExperienceRepository,
+    private val introductionRepository: IntroductionRepository,
+    private val linkRepository: LinkRepository,
+    private val projectRepository: ProjectRepository,
+    private val skillRepository: SkillRepository,
+    private val accountRepository: AccountRepository
+
 ) {
 
     @PostConstruct
@@ -165,6 +167,12 @@ class DataInitializer(
 
         projectRepository.saveAll(mutableListOf(project1, project2))
 
+        val account = Account(
+            loginId = "admin1",
+            pw = "\$2a\$10\$BWi6SLqZRJyVvJyufjTtHeYXNNhpNY9rxaVl9fBOE.1t3QF98B.cO"
+        )
+        accountRepository.save(account)
     }
+
 
 }

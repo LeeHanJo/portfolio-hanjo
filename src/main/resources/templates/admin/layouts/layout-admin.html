@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
 
-<!-- ======= Head ======= -->
 <div th:replace="~{admin/fragments/fragment-head :: head}"></div>
 
 <body>
@@ -14,7 +13,7 @@
 
 <main th:replace="${content}">
 <p>Contents</p>
-</main><!-- End #main -->
+</main>
 
 <!-- ======= Footer ======= -->
 <div th:replace="~{admin/fragments/fragment-footer :: footer}"></div>
@@ -23,7 +22,5 @@
 
 <div th:replace="~{admin/fragments/fragment-script-util :: util}"></div>
 
-
 </body>
-
 </html>

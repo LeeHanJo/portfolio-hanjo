@@ -5,7 +5,7 @@
     /*<![CDATA[*/
 
     // 페이지 속성
-    const pageName = [[${pageName}]]
+    const pageName = [[${pageName}]];
     const pageId = pageName.toString().toLowerCase();
     const editable = [[${editable}]];
     const deletable = [[${deletable}]];
@@ -15,6 +15,7 @@
     const detailsButton = "<button type=\"button\" class=\"btn btn-light\" onclick=\"getDetails(this)\">조회</button>";
     const editButton = "<button type=\"button\" class=\"btn btn-ligit\" data-bs-toggle=\"modal\" data-bs-target=\"#" + pageName + "Modal\" onclick=\"openEdit(this)\"><i class=\"bi bi-pencil\"></button>"
     const deleteButton = "<button type=\"button\" class=\"btn btn-ligit\" onclick=\"deleteRecord(this)\"><i class=\"bi bi-x-square\"></button>"
+
 
     // 데이터테이블 초기화
     var table = [[${table}]];
@@ -267,8 +268,7 @@
     }
 
     /*]]>*/
-
 </script>
-
 </body>
 </html>
+
